@@ -6,26 +6,18 @@
     <figure class="avatar image is-80x80">
       <img src="https://www.gravatar.com/avatar/HASH?s=80&d=identicon" alt="Profile picture" />
     </figure>
-    <div class="card-content">
-      <p>
-        Full name:
-        <span>Han Solo</span>
-      </p>
-      <p>
-        Email address:
-        <span>millenium.falcon@gmail.com</span>
-      </p>
-      <p>
-        Password:
-        <span>************</span>
-      </p>
-    </div>
+    <PersonalInfo />
   </div>
 </template>
 
 <script>
+import PersonalInfo from "./PersonalInfo";
+
 export default {
-  name: "AccountCard"
+  name: "AccountCard",
+  components: {
+    PersonalInfo
+  }
 };
 </script>
 
@@ -33,6 +25,24 @@ export default {
 .avatar {
   width: 80px;
   height: 80px;
-  margin: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.card-header {
+  width: 100%;
+}
+
+.card-header-title {
+  display: flex;
+  justify-content: center;
 }
 </style>

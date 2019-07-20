@@ -1,41 +1,23 @@
 <template>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p>
-          Full name:
-          <span>Han Solo</span>
-        </p>
-      </div>
-      <div class="media-right">
-        <i class="fas fa-pen"></i>
-      </div>
-    </div>
-
-    <div class="media">
-      <div class="media-content">
-        <p>
-          Email address:
-          <span>millenium.falcon@gmail.com</span>
-        </p>
-      </div>
-      <div class="media-right">
-        <i class="fas fa-pen"></i>
-      </div>
-    </div>
-
-    <div class="media">
-      <div class="media-content">
-        <p>
-          Password:
-          <span>************</span>
-        </p>
-      </div>
-      <div class="media-right">
-        <i class="fas fa-pen"></i>
-      </div>
-    </div>
-  </div>
+  <section>
+    <b-field label="Full Name">
+      <b-input value="Han Solo" icon-pack="fas" icon="pen" readonly></b-input>
+    </b-field>
+    <b-field label="Email">
+      <b-input type="email" icon-pack="fas" icon="pen" value="millenium.falcon@gmail.com" readonly></b-input>
+    </b-field>
+    <b-field label="Password">
+      <b-input
+        value="Chewbacca"
+        icon-pack="fas"
+        icon="pen"
+        type="password"
+        maxlength="30"
+        readonly
+        password-reveal
+      ></b-input>
+    </b-field>
+  </section>
 </template>
 
 <script>

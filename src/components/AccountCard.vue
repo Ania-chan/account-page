@@ -3,10 +3,12 @@
     <div class="card-header">
       <div class="card-header-title">My Account</div>
     </div>
-    <figure class="avatar image is-80x80">
+    <figure class="avatar image">
       <img :src="url" alt="Profile picture" />
     </figure>
-    <PersonalInfo />
+    <div class="card-content">
+      <PersonalInfo />
+    </div>
   </div>
 </template>
 
@@ -33,8 +35,6 @@ export default {
 
 <style scoped>
 .avatar {
-  width: 80px;
-  height: 80px;
   margin-top: 30px;
 }
 
@@ -54,5 +54,10 @@ export default {
 .card-header-title {
   display: flex;
   justify-content: center;
+}
+
+.card-content {
+  padding: 10px 50px;
+  width: 100%;
 }
 </style>

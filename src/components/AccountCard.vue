@@ -4,7 +4,7 @@
       <div class="card-header-title">My Account</div>
     </div>
     <figure class="avatar image is-80x80">
-      <img src="https://www.gravatar.com/avatar/HASH?s=80&d=identicon" alt="Profile picture" />
+      <img :src="url" alt="Profile picture" />
     </figure>
     <PersonalInfo />
   </div>
@@ -12,11 +12,21 @@
 
 <script>
 import PersonalInfo from "./PersonalInfo";
+import gravatar from "gravatar";
 
 export default {
   name: "AccountCard",
   components: {
     PersonalInfo
+  },
+  data() {
+    return {
+      url: gravatar.url("millenium.falcon@gmail.com", {
+        s: "80",
+        r: "pg",
+        d: "identicon"
+      })
+    };
   }
 };
 </script>

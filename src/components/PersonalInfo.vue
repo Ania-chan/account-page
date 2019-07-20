@@ -1,17 +1,40 @@
 <template>
   <div class="card-content">
-    <p>
-      Full name:
-      <span>Han Solo</span>
-    </p>
-    <p>
-      Email address:
-      <span>millenium.falcon@gmail.com</span>
-    </p>
-    <p>
-      Password:
-      <span>************</span>
-    </p>
+    <div class="media">
+      <div class="media-content">
+        <p>
+          Full name:
+          <span>Han Solo</span>
+        </p>
+      </div>
+      <div class="media-right">
+        <i class="fas fa-pen"></i>
+      </div>
+    </div>
+
+    <div class="media">
+      <div class="media-content">
+        <p>
+          Email address:
+          <span>millenium.falcon@gmail.com</span>
+        </p>
+      </div>
+      <div class="media-right">
+        <i class="fas fa-pen"></i>
+      </div>
+    </div>
+
+    <div class="media">
+      <div class="media-content">
+        <p>
+          Password:
+          <span>************</span>
+        </p>
+      </div>
+      <div class="media-right">
+        <i class="fas fa-pen"></i>
+      </div>
+    </div>
   </div>
 </template>
 

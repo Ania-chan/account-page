@@ -10,6 +10,7 @@
   "dependencies": {
     "buefy": "^0.7.10",
     "core-js": "^2.6.5",
+    "gravatar": "^1.8.0",
     "vue": "^2.6.10",
     "vuelidate": "^0.7.4",
     "zxcvbn": "^4.4.2"

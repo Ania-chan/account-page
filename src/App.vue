@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <section class="section main-page">
+      <div class="container">
+        <AccountCard />
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AccountCard from "./components/AccountCard";
+import Vue from "vue";
+import Buefy from "buefy";
+import "buefy/dist/buefy.css";
 
+Vue.use(Buefy);
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    AccountCard
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-page {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
 }
 </style>

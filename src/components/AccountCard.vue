@@ -7,7 +7,7 @@
       <img :src="url" alt="Profile picture" />
     </figure>
     <div class="card-content">
-      <PersonalInfo />
+      <PersonalInfo v-bind:user="user" />
     </div>
   </div>
 </template>

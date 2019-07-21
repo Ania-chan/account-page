@@ -11,7 +11,8 @@
 
 <script>
 export default {
-  name: "NameForm"
+  name: "NameForm",
+  props: ["name", "surname"]
 };
 </script>
 

@@ -19,7 +19,8 @@
 
 <script>
 export default {
-  name: "PasswordForm"
+  name: "PasswordForm",
+  props: ["password"]
 };
 </script>
 

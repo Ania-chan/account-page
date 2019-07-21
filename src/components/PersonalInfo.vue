@@ -1,8 +1,8 @@
 <template>
   <section>
-    <NameForm />
-    <EmailForm />
-    <PasswordForm />>
+    <NameForm v-bind:name="user.name" v-bind:surname="user.surname" />
+    <EmailForm v-bind:email="user.email" />
+    <PasswordForm v-bind:password="user.password" />
   </section>
 </template>
 
@@ -13,6 +13,7 @@ import PasswordForm from "./PasswordForm";
 
 export default {
   name: "PersonalInfo",
+  props: ["user"],
   components: {
     NameForm,
     EmailForm,

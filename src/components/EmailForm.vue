@@ -11,7 +11,8 @@
 
 <script>
 export default {
-  name: "EmailForm"
+  name: "EmailForm",
+  props: ["email"]
 };
 </script>
 

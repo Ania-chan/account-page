@@ -13,8 +13,13 @@ import AccountCard from "./components/AccountCard";
 import Vue from "vue";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
+import VeeValidate from "vee-validate";
 
+Vue.use(VeeValidate, {
+  events: ""
+});
 Vue.use(Buefy);
+
 export default {
   name: "app",
   components: {

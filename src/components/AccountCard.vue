@@ -27,7 +27,7 @@ export default {
         name: "Han",
         surname: "Solo",
         email: "millenium.falcon@gmail.com",
-        password: "Chewbacca"
+        password: "Ch3wb4cc4"
       },
       url: gravatar.url("millenium.falcon@gmail.com", {
         s: "80",
@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .avatar {
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
 }
 
 .card {

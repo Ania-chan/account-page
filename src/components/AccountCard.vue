@@ -23,6 +23,12 @@ export default {
   },
   data() {
     return {
+      user: {
+        name: "Han",
+        surname: "Solo",
+        email: "millenium.falcon@gmail.com",
+        password: "Chewbacca"
+      },
       url: gravatar.url("millenium.falcon@gmail.com", {
         s: "80",
         r: "pg",
@@ -54,6 +60,9 @@ export default {
 .card-header-title {
   display: flex;
   justify-content: center;
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  color: #ff5f6d;
 }
 
 .card-content {

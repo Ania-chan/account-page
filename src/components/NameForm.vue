@@ -1,0 +1,19 @@
+<template>
+  <b-field label="Full Name">
+    <b-input v-model="name" value="Han Solo" readonly></b-input>
+    <p class="control">
+      <button class="button is-primary">
+        <i class="fas fa-pen"></i>
+      </button>
+    </p>
+  </b-field>
+</template>
+
+<script>
+export default {
+  name: "NameForm"
+};
+</script>
+
+<style scoped>
+</style>

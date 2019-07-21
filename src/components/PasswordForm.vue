@@ -1,17 +1,20 @@
 <template>
-  <b-field label="Password">
+  <b-field grouped>
     <b-input
-      value="Chewbacca"
-      icon-pack="fas"
-      icon="pen"
+      expanded
+      :value="password"
+      v-model="password"
       type="password"
       maxlength="30"
-      readonly
-      password-reveal
+      :password-reveal="(isEdited) ? true : false"
+      :readonly="(isEdited) ? false : true"
     ></b-input>
     <p class="control">
-      <button class="button is-primary">
+      <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
         <i class="fas fa-pen"></i>
+      </button>
+      <button class="button is-success" v-show="isEdited" v-on:click="save">
+        <i class="fas fa-check"></i>
       </button>
     </p>
   </b-field>
@@ -20,7 +23,20 @@
 <script>
 export default {
   name: "PasswordForm",
-  props: ["password"]
+  props: ["password"],
+  data() {
+    return {
+      isEdited: false
+    };
+  },
+  methods: {
+    edit() {
+      this.isEdited = true;
+    },
+    save() {
+      this.isEdited = false;
+    }
+  }
 };
 </script>
 

@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <div class="personal-info">
     <NameForm v-bind:name="user.name" v-bind:surname="user.surname" />
     <EmailForm v-bind:email="user.email" />
     <PasswordForm v-bind:password="user.password" />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+.personal-info {
+  width: 100%;
+}
 </style>

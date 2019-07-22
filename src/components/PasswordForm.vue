@@ -3,6 +3,7 @@
     <label class="label">Password</label>
     <b-field
       grouped
+      group-multiline
       :type="{'is-danger': errors.has('password')}"
       :message="errors.first('password')"
     >

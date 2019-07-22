@@ -1,9 +1,13 @@
 <template>
   <form @submit.prevent="validateBeforeSubmit">
     <label class="label">Full Name</label>
-    <b-field grouped :type="{'is-danger': errors.has('name')}" :message="errors.first('name')">
+    <b-field
+      grouped
+      group-multiline
+      :type="{'is-danger': errors.has('name')}"
+      :message="errors.first('name')"
+    >
       <b-input
-        expanded
         placeholder="Name"
         v-model="name"
         :value="name"

@@ -1,6 +1,12 @@
 <template>
   <form @submit.prevent="validateBeforeSubmit">
-    <b-field grouped :type="{'is-danger': errors.has('email')}" :message="errors.first('email')">
+    <label class="label">Email</label>
+    <b-field
+      grouped
+      group-multiline
+      :type="{'is-danger': errors.has('email')}"
+      :message="errors.first('email')"
+    >
       <b-input
         expanded
         placeholder="Email"
@@ -38,6 +44,7 @@ export default {
     },
     save() {
       this.isEdited = false;
+      this.$emit("update-email", this.email);
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {

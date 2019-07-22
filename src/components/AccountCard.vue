@@ -4,7 +4,7 @@
       <div class="card-header-title">My Account</div>
     </div>
     <figure class="avatar image">
-      <img :src="url" alt="Profile picture" />
+      <v-gravatar :email="user.email" alt="Profile picture" :size="80" default-img="identicon" />
     </figure>
     <div class="card-content">
       <PersonalInfo v-bind:user="user" />
@@ -14,7 +14,6 @@
 
 <script>
 import PersonalInfo from "./PersonalInfo";
-import gravatar from "gravatar";
 
 export default {
   name: "AccountCard",
@@ -28,14 +27,10 @@ export default {
         surname: "Solo",
         email: "millenium.falcon@gmail.com",
         password: "Ch3wb4cc4"
-      },
-      url: gravatar.url("millenium.falcon@gmail.com", {
-        s: "80",
-        r: "pg",
-        d: "identicon"
-      })
+      }
     };
-  }
+  },
+  computed: {}
 };
 </script>
 

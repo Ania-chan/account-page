@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="validateBeforeSubmit">
+    <label class="label">Full Name</label>
     <b-field grouped :type="{'is-danger': errors.has('name')}" :message="errors.first('name')">
       <b-input
         expanded
@@ -47,6 +48,8 @@ export default {
     },
     save() {
       this.isEdited = false;
+      this.$emit("update-name", this.name);
+      this.$emit("update-surname", this.surname);
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {

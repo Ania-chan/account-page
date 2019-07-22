@@ -14,6 +14,9 @@ import Vue from "vue";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
 import VeeValidate from "vee-validate";
+import Gravatar from "vue-gravatar";
+
+Vue.component("v-gravatar", Gravatar);
 
 Vue.use(VeeValidate, {
   events: ""

@@ -1,8 +1,13 @@
 <template>
   <div class="personal-info">
-    <NameForm v-bind:name="user.name" v-bind:surname="user.surname" />
-    <EmailForm v-bind:email="user.email" />
-    <PasswordForm v-bind:password="user.password" />
+    <NameForm
+      v-bind:name="user.name"
+      v-bind:surname="user.surname"
+      v-on:update-name="nameUpdateHandler"
+      v-on:update-surname="surnameUpdateHandler"
+    />
+    <EmailForm v-on:update-email="emailUpdateHandler" v-bind:email="user.email" />
+    <PasswordForm v-on:update-password="passwordUpdateHandler" v-bind:password="user.password" />
   </div>
 </template>
 
@@ -18,6 +23,20 @@ export default {
     NameForm,
     EmailForm,
     PasswordForm
+  },
+  methods: {
+    nameUpdateHandler: function(name) {
+      this.user.name = name;
+    },
+    surnameUpdateHandler: function(surname) {
+      this.user.surname = surname;
+    },
+    emailUpdateHandler: function(email) {
+      this.user.email = email;
+    },
+    passwordUpdateHandler: function(password) {
+      this.user.password = password;
+    }
   }
 };
 </script>
@@ -25,5 +44,8 @@ export default {
 <style scoped>
 .personal-info {
   width: 100%;
+}
+form {
+  margin: 20px 0;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="validateBeforeSubmit">
+    <label class="label">Password</label>
     <b-field
       grouped
       :type="{'is-danger': errors.has('password')}"
@@ -44,6 +45,7 @@ export default {
     },
     save() {
       this.isEdited = false;
+      this.$emit("update-password", this.password);
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {

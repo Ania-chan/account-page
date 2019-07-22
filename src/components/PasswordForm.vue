@@ -49,8 +49,10 @@ export default {
       this.isEdited = true;
     },
     save() {
-      this.isEdited = false;
-      this.$emit("update-password", this.password);
+      if (!this.fields.password.invalid) {
+        this.isEdited = false;
+        this.$emit("update-password", this.password);
+      }
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {

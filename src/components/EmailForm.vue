@@ -43,8 +43,10 @@ export default {
       this.isEdited = true;
     },
     save() {
-      this.isEdited = false;
-      this.$emit("update-email", this.email);
+      if (!this.fields.email.invalid) {
+        this.isEdited = false;
+        this.$emit("update-email", this.email);
+      }
     },
     validateBeforeSubmit() {
       this.$validator.validateAll().then(result => {

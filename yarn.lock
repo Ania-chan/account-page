@@ -7914,6 +7914,11 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-password-strength-meter@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/vue-password-strength-meter/-/vue-password-strength-meter-1.4.2.tgz#7f4c8610c1eeb44182d7d4e256bc43859cf0c260"
+  integrity sha512-J0onvG2/7mE2szC/KMxiKWToIxUNg0Tz/PyDOOGDWV3pX277fEJ6fNOaHfRm7oaRgdy3vYlt39ifultq4r+5Hw==
+
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"

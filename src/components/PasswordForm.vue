@@ -27,11 +27,15 @@
         </button>
       </p>
     </b-field>
+    <password v-model="password" :strength-meter-only="true" />
   </form>
 </template>
 
 <script>
+import Password from "vue-password-strength-meter";
+
 export default {
+  components: { Password },
   name: "PasswordForm",
   props: ["password"],
   data() {
@@ -69,4 +73,7 @@ export default {
 </script>
 
 <style scoped>
+.Password {
+  margin: 0;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <div class="input-field">
-    <label class="label">Password</label>
+  <b-field class="input-field" label="Password">
     <b-field
       grouped
       group-multiline
@@ -28,8 +27,8 @@
         </button>
       </p>
     </b-field>
-    <password v-model="password" :strength-meter-only="true" />
-  </div>
+    <!-- <password v-model="password" :strength-meter-only="true" /> -->
+  </b-field>
 </template>
 
 <script>

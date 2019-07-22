@@ -1,6 +1,5 @@
 <template>
-  <div class="input-field">
-    <label class="label">Full Name</label>
+  <b-field class="input-field" label="Full Name">
     <b-field
       grouped
       group-multiline
@@ -16,16 +15,22 @@
         :readonly="(isEdited) ? false : true"
         v-validate="'required|max:30'"
       ></b-input>
-      <b-input
-        expanded
-        placeholder="Surname"
-        v-model="surname"
-        :value="surname"
-        name="surname"
-        :readonly="(isEdited) ? false : true"
-        v-validate="'required|max:30'"
-      ></b-input>
-
+      <b-field
+        grouped
+        group-multiline
+        :type="{'is-danger': errors.has('surname')}"
+        :message="errors.first('surname')"
+      >
+        <b-input
+          expanded
+          placeholder="Surname"
+          v-model="surname"
+          :value="surname"
+          name="surname"
+          :readonly="(isEdited) ? false : true"
+          v-validate="'required|max:30'"
+        ></b-input>
+      </b-field>
       <p class="control">
         <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
           <i class="fas fa-pen"></i>
@@ -35,7 +40,7 @@
         </button>
       </p>
     </b-field>
-  </div>
+  </b-field>
 </template>
 
 <script>
@@ -52,7 +57,7 @@ export default {
       this.isEdited = true;
     },
     save() {
-      this.$validator.validate().then(valid => {
+      this.$validator.validateAll().then(valid => {
         if (!valid) {
           this.$toast.open({
             message: "Form is not valid! Please check the fields.",

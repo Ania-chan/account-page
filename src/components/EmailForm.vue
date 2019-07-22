@@ -1,6 +1,5 @@
 <template>
-  <div class="input-field">
-    <label class="label">Email</label>
+  <b-field class="input-field" label="Email">
     <b-field
       grouped
       group-multiline
@@ -26,7 +25,7 @@
         </button>
       </p>
     </b-field>
-  </div>
+  </b-field>
 </template>
 
 <script>

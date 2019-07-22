@@ -29,8 +29,7 @@ export default {
         password: "Ch3wb4cc4"
       }
     };
-  },
-  computed: {}
+  }
 };
 </script>
 

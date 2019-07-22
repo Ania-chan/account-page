@@ -40,7 +40,7 @@ export default {
 }
 
 .card {
-  width: 55%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,17 @@ export default {
 }
 
 .card-content {
-  padding: 10px 50px;
+  padding: 10px 10px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 55%;
+  }
+  .card-content {
+    padding: 10px 50px;
+    width: 100%;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="validateBeforeSubmit">
+  <div class="input-field">
     <label class="label">Password</label>
     <b-field
       grouped
@@ -29,7 +29,7 @@
       </p>
     </b-field>
     <password v-model="password" :strength-meter-only="true" />
-  </form>
+  </div>
 </template>
 
 <script>
@@ -49,26 +49,17 @@ export default {
       this.isEdited = true;
     },
     save() {
-      if (!this.fields.password.invalid) {
-        this.isEdited = false;
-        this.$emit("update-password", this.password);
-      }
-    },
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then(result => {
-        if (result) {
+      this.$validator.validate().then(valid => {
+        if (!valid) {
           this.$toast.open({
-            message: "Form is valid!",
-            type: "is-success",
+            message: "Form is not valid! Please check the fields.",
+            type: "is-danger",
             position: "is-bottom"
           });
-          return;
+        } else {
+          this.isEdited = false;
+          this.$emit("update-password", this.password);
         }
-        this.$toast.open({
-          message: "Form is not valid! Please check the fields.",
-          type: "is-danger",
-          position: "is-bottom"
-        });
       });
     }
   }

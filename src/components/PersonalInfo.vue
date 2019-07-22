@@ -45,7 +45,7 @@ export default {
 .personal-info {
   width: 100%;
 }
-form {
+.input-field {
   margin: 20px 0;
 }
 </style>

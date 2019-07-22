@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="validateBeforeSubmit">
+  <div class="input-field">
     <label class="label">Email</label>
     <b-field
       grouped
@@ -26,7 +26,7 @@
         </button>
       </p>
     </b-field>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -43,26 +43,17 @@ export default {
       this.isEdited = true;
     },
     save() {
-      if (!this.fields.email.invalid) {
-        this.isEdited = false;
-        this.$emit("update-email", this.email);
-      }
-    },
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then(result => {
-        if (result) {
+      this.$validator.validate().then(valid => {
+        if (!valid) {
           this.$toast.open({
-            message: "Form is valid!",
-            type: "is-success",
+            message: "Form is not valid! Please check the fields.",
+            type: "is-danger",
             position: "is-bottom"
           });
-          return;
+        } else {
+          this.isEdited = false;
+          this.$emit("update-email", this.email);
         }
-        this.$toast.open({
-          message: "Form is not valid! Please check the fields.",
-          type: "is-danger",
-          position: "is-bottom"
-        });
       });
     }
   }

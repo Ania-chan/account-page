@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="validateBeforeSubmit">
+  <div class="input-field">
     <label class="label">Full Name</label>
     <b-field
       grouped
@@ -8,6 +8,7 @@
       :message="errors.first('name')"
     >
       <b-input
+        expanded
         placeholder="Name"
         v-model="name"
         :value="name"
@@ -34,7 +35,7 @@
         </button>
       </p>
     </b-field>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -51,25 +52,17 @@ export default {
       this.isEdited = true;
     },
     save() {
-      this.isEdited = false;
-      this.$emit("update-name", this.name);
-      this.$emit("update-surname", this.surname);
-    },
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then(result => {
-        if (result) {
+      this.$validator.validate().then(valid => {
+        if (!valid) {
           this.$toast.open({
-            message: "Form is valid!",
-            type: "is-success",
+            message: "Form is not valid! Please check the fields.",
+            type: "is-danger",
             position: "is-bottom"
           });
-          return;
+        } else {
+          this.isEdited = false;
+          this.$emit("update-password", this.password);
         }
-        this.$toast.open({
-          message: "Form is not valid! Please check the fields.",
-          type: "is-danger",
-          position: "is-bottom"
-        });
       });
     }
   }

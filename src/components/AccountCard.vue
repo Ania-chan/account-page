@@ -36,11 +36,11 @@ export default {
 
 <style scoped>
 .avatar {
-  margin: 30px 0 10px 0;
+  margin-top: 30px;
 }
 
 .card {
-  width: 50%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;

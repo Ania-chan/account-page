@@ -17,7 +17,7 @@
           password-reveal
           :readonly="(isEdited) ? false : true"
           name="password"
-          v-validate="'required|min:8'"
+          v-validate="'required|min:8|strong'"
         ></b-input>
         <p class="control">
           <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
@@ -29,7 +29,13 @@
         </p>
       </b-field>
     </b-field>
-    <password v-model="password" :strength-meter-only="true" />
+    <password
+      @score="showScore"
+      @feedback="showFeedback"
+      v-model="password"
+      :strength-meter-only="true"
+      :secure-length="8"
+    />
   </div>
 </template>
 
@@ -42,12 +48,36 @@ export default {
   props: ["password"],
   data() {
     return {
-      isEdited: false
+      isEdited: false,
+      score: 0,
+      suggestions: [],
+      warning: ""
     };
+  },
+  created() {
+    this.$validator.extend("strong", {
+      getMessage: () => {
+        if (this.warning) {
+          return this.warning;
+        } else if (this.suggestions.length) {
+          return this.suggestions[0];
+        }
+      },
+      validate: () => {
+        return this.score >= 2;
+      }
+    });
   },
   methods: {
     edit() {
       this.isEdited = true;
+    },
+    showScore(score) {
+      this.score = score;
+    },
+    showFeedback({ suggestions, warning }) {
+      this.suggestions = suggestions;
+      this.warning = warning;
     },
     save() {
       this.$validator.validate().then(valid => {

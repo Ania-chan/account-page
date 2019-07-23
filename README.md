@@ -6,7 +6,7 @@ This is a simple account page card showing gravatar profile picture, full name, 
 
 - Full name (required): shouldn't be longer than 30 characters and can only contain letters.
 - Email (required): is a valid email address.
-- Password (required): is longer than 8 and shorter than 30 characters and strength estimation is higher that 2 (in the scale of 4).
+- Password (required): is longer than 8 and shorter than 30 characters. Also strength estimation must be higher that 2 (in a scale of 0 to 4).
 
 ## Getting Started
 

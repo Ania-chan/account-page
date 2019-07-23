@@ -13,7 +13,7 @@
           :value="password"
           name="password"
           :readonly="(isEdited) ? false : true"
-          :maxlength="(isEdited) ? '30' : false"
+          :maxlength="(isEdited) ? 30 : ''"
           v-validate="'required|min:8|strong'"
           type="password"
           password-reveal

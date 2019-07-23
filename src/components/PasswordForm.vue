@@ -1,32 +1,33 @@
 <template>
   <div class="input-field">
-    <label class="label">Password</label>
-    <b-field
-      grouped
-      group-multiline
-      :type="{'is-danger': errors.has('password')}"
-      :message="errors.first('password')"
-    >
-      <b-input
-        expanded
-        placeholder="Password"
-        v-model="password"
-        :value="password"
-        type="password"
-        :maxlength="(isEdited) ? '30' : false"
-        password-reveal
-        :readonly="(isEdited) ? false : true"
-        name="password"
-        v-validate="'required|min:8'"
-      ></b-input>
-      <p class="control">
-        <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
-          <i class="fas fa-pen"></i>
-        </button>
-        <button class="button is-success" type="submit" v-show="isEdited" v-on:click="save">
-          <i class="fas fa-check"></i>
-        </button>
-      </p>
+    <b-field horizontal label="Password">
+      <b-field
+        grouped
+        group-multiline
+        :type="{'is-danger': errors.has('password')}"
+        :message="errors.first('password')"
+      >
+        <b-input
+          expanded
+          placeholder="Password"
+          v-model="password"
+          :value="password"
+          type="password"
+          :maxlength="(isEdited) ? '30' : false"
+          password-reveal
+          :readonly="(isEdited) ? false : true"
+          name="password"
+          v-validate="'required|min:8'"
+        ></b-input>
+        <p class="control">
+          <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
+            <i class="fas fa-pen"></i>
+          </button>
+          <button class="button is-success" type="submit" v-show="isEdited" v-on:click="save">
+            <i class="fas fa-check"></i>
+          </button>
+        </p>
+      </b-field>
     </b-field>
     <password v-model="password" :strength-meter-only="true" />
   </div>

@@ -66,7 +66,7 @@ export default {
 
 @media (min-width: 768px) {
   .card {
-    width: 55%;
+    width: 60%;
   }
   .card-content {
     padding: 10px 50px;

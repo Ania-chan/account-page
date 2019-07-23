@@ -1,5 +1,5 @@
 <template>
-  <div class="personal-info">
+  <div class="input-fields">
     <NameForm
       v-bind:name="user.name"
       v-bind:surname="user.surname"
@@ -17,13 +17,14 @@ import EmailForm from "./EmailForm";
 import PasswordForm from "./PasswordForm";
 
 export default {
-  name: "PersonalInfo",
+  name: "InputFields",
   props: ["user"],
   components: {
     NameForm,
     EmailForm,
     PasswordForm
   },
+  // Update the user object after editing it in the form
   methods: {
     nameUpdateHandler: function(name) {
       this.user.name = name;
@@ -42,9 +43,10 @@ export default {
 </script>
 
 <style scoped>
-.personal-info {
+.input-fields {
   width: 100%;
 }
+
 .input-field {
   margin: 20px 0;
 }

@@ -8,16 +8,16 @@
         :message="errors.first('password')"
       >
         <b-input
-          expanded
           placeholder="Password"
           v-model="password"
           :value="password"
-          type="password"
-          :maxlength="(isEdited) ? '30' : false"
-          password-reveal
-          :readonly="(isEdited) ? false : true"
           name="password"
+          :readonly="(isEdited) ? false : true"
+          :maxlength="(isEdited) ? '30' : false"
           v-validate="'required|min:8|strong'"
+          type="password"
+          password-reveal
+          expanded
         ></b-input>
         <p class="control">
           <button class="button is-primary" v-show="!isEdited" v-on:click="edit">
@@ -30,8 +30,8 @@
       </b-field>
     </b-field>
     <password
-      @score="showScore"
-      @feedback="showFeedback"
+      @score="updateScore"
+      @feedback="updateFeedback"
       v-model="password"
       :strength-meter-only="true"
       :secure-length="8"
@@ -54,6 +54,7 @@ export default {
       warning: ""
     };
   },
+  // Custom validation rule for password strength
   created() {
     this.$validator.extend("strong", {
       getMessage: () => {
@@ -72,10 +73,10 @@ export default {
     edit() {
       this.isEdited = true;
     },
-    showScore(score) {
+    updateScore(score) {
       this.score = score;
     },
-    showFeedback({ suggestions, warning }) {
+    updateFeedback({ suggestions, warning }) {
       this.suggestions = suggestions;
       this.warning = warning;
     },

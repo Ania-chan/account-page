@@ -7,18 +7,18 @@
       <v-gravatar :email="user.email" alt="Profile picture" :size="80" default-img="identicon" />
     </figure>
     <div class="card-content">
-      <PersonalInfo v-bind:user="user" />
+      <InputFields v-bind:user="user" />
     </div>
   </div>
 </template>
 
 <script>
-import PersonalInfo from "./PersonalInfo";
+import InputFields from "./InputFields";
 
 export default {
   name: "AccountCard",
   components: {
-    PersonalInfo
+    InputFields
   },
   data() {
     return {
@@ -69,7 +69,6 @@ export default {
   }
   .card-content {
     padding: 10px 50px;
-    width: 100%;
   }
 }
 </style>

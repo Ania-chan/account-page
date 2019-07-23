@@ -7,14 +7,14 @@
       :message="errors.first('email')"
     >
       <b-input
-        expanded
         placeholder="Email"
         v-model="email"
         :value="email"
+        name="email"
         :readonly="(isEdited) ? false : true"
         v-validate="'required|email'"
-        name="email"
         type="text"
+        expanded
       ></b-input>
       <p class="control">
         <button class="button is-primary" v-show="!isEdited" v-on:click="edit">

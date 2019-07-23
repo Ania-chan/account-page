@@ -1,5 +1,5 @@
 <template>
-  <b-field horizontal class="input-field" label="Email">
+  <b-field class="input-field" label="Email">
     <b-field
       grouped
       group-multiline

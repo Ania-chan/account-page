@@ -46,6 +46,10 @@ export default {
   width: 100%;
 }
 .input-field {
-  margin: 40px 0;
+  margin: 20px 0;
+}
+
+p.help.is-danger {
+  margin-top: 0;
 }
 </style>

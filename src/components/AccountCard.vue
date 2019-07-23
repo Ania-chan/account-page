@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .avatar {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .card {
@@ -44,7 +44,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
 }
 
 .card-header {
@@ -66,7 +65,7 @@ export default {
 
 @media (min-width: 768px) {
   .card {
-    width: 60%;
+    width: 50%;
   }
   .card-content {
     padding: 10px 50px;

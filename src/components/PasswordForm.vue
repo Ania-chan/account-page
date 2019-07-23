@@ -1,6 +1,6 @@
 <template>
   <div class="input-field">
-    <b-field horizontal label="Password">
+    <b-field label="Password">
       <b-field
         grouped
         group-multiline
@@ -69,6 +69,7 @@ export default {
 
 <style scoped>
 .Password {
-  margin: 0;
+  padding-left: 0;
+  margin-left: 0;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <b-field horizontal class="input-field" label="Full Name">
+  <b-field class="input-field" label="Full Name">
     <b-field
       grouped
       group-multiline
@@ -7,13 +7,13 @@
       :message="errors.first('name')"
     >
       <b-input
-        expanded
         placeholder="Name"
         v-model="name"
         :value="name"
         name="name"
         :readonly="(isEdited) ? false : true"
-        v-validate="'required|max:30'"
+        v-validate="'required|max:30|alpha'"
+        expanded
       ></b-input>
       <b-field
         grouped
@@ -22,13 +22,13 @@
         :message="errors.first('surname')"
       >
         <b-input
-          expanded
           placeholder="Surname"
           v-model="surname"
           :value="surname"
           name="surname"
           :readonly="(isEdited) ? false : true"
-          v-validate="'required|max:30'"
+          v-validate="'required|max:30|alpha'"
+          expanded
         ></b-input>
       </b-field>
       <p class="control">

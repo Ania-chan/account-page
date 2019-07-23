@@ -10,15 +10,25 @@ This is a simple account page card showing gravatar profile picture, full name, 
 
 ## Getting Started
 
-### Install
-
-Use [yarn](https://yarnpkg.com/en/) to install dependencies.
+### Use [yarn](https://yarnpkg.com/en/) to install dependencies.
 
 ```
 $ yarn install
 ```
 
-### Start
+### Serve with hot reload at localhost:8080
+
+```
+$ yarn serve
+```
+
+### Build for production
+
+```
+$ yarn build
+```
+
+### Start in production mode at localhost:5000
 
 ```
 $ yarn start

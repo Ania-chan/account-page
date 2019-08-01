@@ -17,9 +17,16 @@
       <b-input placeholder="Title" v-model="title" :value="title" name="title" type="text" expanded></b-input>
     </b-field>
     <b-field class="input-field" label="Issue">
-      <b-input placeholder="Issue" v-model="issue" :value="issue" name="issue" type="text" expanded></b-input>
+      <b-input
+        type="textarea"
+        v-model="issue"
+        name="issue"
+        minlength="10"
+        maxlength="100"
+        placeholder="Issue"
+      ></b-input>
     </b-field>
-    <button type="submit" v-on:click="submitIssue">Submit</button>
+    <b-button type="submit is-success" v-on:click="submitIssue">Submit</b-button>
   </form>
 </template>
 

@@ -3,6 +3,7 @@
     <section class="section main-page">
       <div class="container">
         <AccountCard />
+        <GitHubIssueCard />
       </div>
     </section>
   </div>
@@ -15,6 +16,7 @@ import Buefy from "buefy";
 import "buefy/dist/buefy.css";
 import VeeValidate from "vee-validate";
 import Gravatar from "vue-gravatar";
+import GitHubIssueCard from "./components/GitHubIssueCard";
 
 Vue.component("v-gravatar", Gravatar);
 
@@ -26,7 +28,8 @@ Vue.use(Buefy);
 export default {
   name: "app",
   components: {
-    AccountCard
+    AccountCard,
+    GitHubIssueCard
   }
 };
 </script>
